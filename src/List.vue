@@ -1,14 +1,14 @@
 <template>
   <div>
     <ul>
-      <li v-for="number in numbers">{{ number }}</li>
+      <li v-for="(number, i) in numbers" :key="i">{{ number }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mixin } from "./mixin";
+import { mixin } from './mixin'
 export default {
-  mixins: [mixin],
-};
+  mixins: [mixin]
+}
 </script>
