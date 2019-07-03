@@ -5,7 +5,7 @@
     <h2>App.vueで読み込んだmixin</h2>
     <button @click="pushNumberInNumbersArr">Add number</button>
     <ul>
-      <li v-for="number in numbers">{{ number }}</li>
+      <li v-for="(number,i) in numbers" :key="i">{{ number }}</li>
     </ul>
     <hr>
     <h2>別コンポーネント(List.vue)で読み込んだmixin</h2>
@@ -20,12 +20,12 @@ export default {
   mixins: [mixin],
   methods: {
     pushNumberInNumbersArr() {
-      const number = Math.floor(Math.random() * this.numbers.length);
-      this.numbers.push(number);
+      const number = Math.floor(Math.random() * this.numbers.length)
+      this.numbers.push(number)
     }
   },
   components: {
-    appList : List,
+    appList : List
   }
 }
 </script>
